@@ -1,22 +1,7 @@
 import hashlib
-import base64
-import pyotp
 import datetime
-
-'''
-pyotp 라이브러리를 이용한 TOTP 사용
-
-otp_key : bytes형, otp 키 데이터
-refresh_time : int형, OTP 갱신 시간
-digest_mode : hashlib, 암호화 해시 모드
-current_time : int형, 현재 시간(밀리세컨드)
-'''
-def totp(otp_key, refresh_time, digest_mode, current_time):
-    key = base64.b32encode(otp_key)    
-    totp = pyotp.TOTP(key, interval=refresh_time, digest=digest_mode)
-    return totp.at(current_time)
-
-
+import pyotp_totp_example as pyotp_totp
+import hmac_totp_example as h_totp
 
 if __name__ == "__main__":
     # 암호화 해시 모드
@@ -43,5 +28,8 @@ if __name__ == "__main__":
     print('OTP key : ', otp_key.hex())
     print('refresh time(sec) : ', refresh_time)
 
-    # pytop 사용
-    print('      by pyotp :', totp(otp_key, refresh_time, digest_mode, now.timestamp()))
+    # pyotp 사용
+    print('      by pyotp :', pyotp_totp.totp(otp_key, refresh_time, digest_mode, now.timestamp()))
+    # hmac 사용
+    print('      by hmac :', h_totp.totp(otp_key, refresh_time, digest_mode, now.timestamp()))
+    
