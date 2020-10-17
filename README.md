@@ -30,3 +30,24 @@
 
 ![blob/scr_pyotp.png](blob/scr_pyotp.png)
 
+
+<br><br>
+
+## pyotp와 hmac 모두 테스트
+
+코드 파일 명 : totp_example.py
+
+추가 필요 파일 :
+
+    pyotp_totp_example.py
+    hmac_totp_example.py
+
+실행 방법 : 
+
+    > pip install pyotp   # pyotp 모듈 설치 필요
+    > python totp_example.py
+
+### 결과 
+
+![blob/scr_pyotp.png](blob/scr_both.png)
+
