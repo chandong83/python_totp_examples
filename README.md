@@ -51,3 +51,11 @@
 
 ![blob/scr_pyotp.png](blob/scr_both.png)
 
+
+### 관련 블로그
+
+https://blog.naver.com/chandong83/222117664338
+
+### 참고 링크
+
+https://github.com/lucadentella/TOTP-Arduino
